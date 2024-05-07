@@ -10,8 +10,13 @@ export default function SearchCountry() {
 
     useEffect(() => {
         const fetchCountries =async()=>{
-            const response = await axios.get('https://restcountries.com/v3.1/all');
-            setCountries(response.data)
+            try{
+                const response = await axios.get('https://restcountries.com/v3.1/all');
+                setCountries(response.data)
+            }
+            catch(err){
+                console.error(err);
+            }           
         }
         fetchCountries();
     },[])
@@ -22,17 +27,20 @@ export default function SearchCountry() {
 
   return (
     <div className='container'>
-        <input type="search" name="search" className='search' 
-        placeholder="Search for countries..."
-        onChange={(e) =>setSelectedCountry(e.target.value)}
-        />
+        <div>
+            <input type="text" name="search" className='search' 
+            placeholder="Search for countries..."
+            onChange={(e) =>setSelectedCountry(e.target.value)}
+            />
+        </div>
+       
         <div className='Allcards'>
         {
             filteredCountries.map((item,index) => {
                 return (
                     <div className='card'>
                     <img src={item.flags.png} alt={item.name.common} className='flags'/>
-                    <h3>{item.name.common}</h3>
+                    <h2>{item.name.common}</h2>
                     </div>
                 )
             })
