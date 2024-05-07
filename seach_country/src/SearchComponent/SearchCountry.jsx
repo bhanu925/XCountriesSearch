@@ -38,7 +38,7 @@ export default function SearchCountry() {
         {
             filteredCountries.map((item,index) => {
                 return (
-                    <div className='card'>
+                    <div className='countryCard'>
                     <img src={item.flags.png} alt={item.name.common} className='flags'/>
                     <h2>{item.name.common}</h2>
                     </div>
