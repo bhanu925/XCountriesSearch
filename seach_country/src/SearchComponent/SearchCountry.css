@@ -1,0 +1,31 @@
+.search{
+    padding: 5px 10px;
+    width: 50vw;
+    height: 40px;
+}
+
+.container{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+   
+}
+
+.card{
+    width: 200px;
+    height: 160px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+   
+}
+
+.flags{
+    width: 100px;
+    height: 100px;   
+}
+.Allcards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
